@@ -2,8 +2,7 @@ package Chess.Board;
 
 import Chess.Piece.Piece;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Cathal OLeary
