@@ -1,5 +1,7 @@
 package Chess.Piece;
 
+import java.util.List;
+
 /**
  * Created by Cathal OLeary
  */
@@ -12,4 +14,6 @@ public class Piece {
         this.PiecePosition=PiecePosition;
         this.PieceAlliance=PieceAlliance;
     }
+
+   public abstract List<Moves> CalLegaMoves(final Board board)
 }
