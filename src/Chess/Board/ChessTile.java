@@ -1,10 +1,28 @@
+package Chess.Board;
+
+import Chess.Piece.Piece;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Cathal OLeary
  */
 
 public abstract class ChessTile {
 
-    int TileCord;
+   private final int TileCord;
+
+   private static Map<Integer, EmptyT> AllPossibleET(){
+       final Map<Integer, EmptyT> ETMap=new HashMap<>();
+       int i;
+
+       for(i=0;i<64;i++){
+         ETMap.put(i, new EmptyT(i));
+       }
+
+       return null;
+   }
 
     ChessTile(int TileCord) {
         this.TileCord=TileCord;
@@ -16,7 +34,7 @@ public abstract class ChessTile {
 
     public static final class EmptyT extends ChessTile{
 
-        EmptyT(int Coord){
+        EmptyT(final int Coord){
             super(Coord);
         }
 
@@ -31,7 +49,7 @@ public abstract class ChessTile {
 
     public static final class OccupiedT extends ChessTile{
 
-        Piece PieceOnT;
+       private final Piece PieceOnT;
 
         OccupiedT(int TileCord, Piece PieceOnT){
             super(TileCord);
