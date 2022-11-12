@@ -8,10 +8,9 @@ import java.util.*;
  */
 
 public abstract class ChessTile {
-
    private final int TileCord;
 
-   private static final Map<Integer, EmptyT> EMPTY_T_MAP = AllPossibleET();
+   private static final Map<Integer, EmptyT> EMPTY_T_MAP_CACHE = AllPossibleET();
 
    private static Map<Integer, EmptyT> AllPossibleET(){
        final Map<Integer, EmptyT> ETMap=new HashMap<>();
@@ -25,7 +24,7 @@ public abstract class ChessTile {
    }
 
    public static ChessTile CreateT(final int TileCord, final Piece piece){
-       return piece !=null ? new OccupiedT(TileCord, piece) : EMPTY_T_MAP.get(TileCord);
+       return piece !=null ? new OccupiedT(TileCord, piece) : EMPTY_T_MAP_CACHE.get(TileCord);
    }
 
     private ChessTile(int TileCord) {
@@ -38,7 +37,7 @@ public abstract class ChessTile {
 
     public static final class EmptyT extends ChessTile{
 
-        EmptyT(final int Coord){
+        private EmptyT(final int Coord){
             super(Coord);
         }
 
@@ -55,7 +54,7 @@ public abstract class ChessTile {
 
        private final Piece PieceOnT;
 
-        OccupiedT(int TileCord, Piece PieceOnT){
+       private OccupiedT(int TileCord, Piece PieceOnT){
             super(TileCord);
             this.PieceOnT=PieceOnT;
         }
