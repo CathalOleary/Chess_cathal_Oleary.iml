@@ -11,21 +11,21 @@ import java.util.*;
 public abstract class ChessTile {
    private final int TileCord;
 
-   private static final Map<Integer, EmptyT> EMPTY_T_MAP_CACHE = AllPossibleET();
+   private static final Map<Integer, EmptyTile> EMPTY_T_MAP_CACHE = AllPossibleET();
 
-   private static Map<Integer, EmptyT> AllPossibleET(){
-       final Map<Integer, EmptyT> ETMap=new HashMap<>();
+   private static Map<Integer, EmptyTile> AllPossibleET(){
+       final Map<Integer, EmptyTile> ETMap=new HashMap<>();
        int i;
 
        for(i=0;i<64;i++){
-         ETMap.put(i, new EmptyT(i));
+         ETMap.put(i, new EmptyTile(i));
        }
 
        return ETMap;
    }
 
-   public static ChessTile CreateT(final int TileCord, final Piece piece){
-       return piece !=null ? new OccupiedT(TileCord, piece) : EMPTY_T_MAP_CACHE.get(TileCord);
+   public static ChessTile CreateTile(final int TileCord, final Piece piece){
+       return piece !=null ? new OccupiedTile(TileCord, piece) : EMPTY_T_MAP_CACHE.get(TileCord);
    }
 
     private ChessTile(int TileCord) {
@@ -36,9 +36,9 @@ public abstract class ChessTile {
 
     public abstract Piece getPiece();
 
-    public static final class EmptyT extends ChessTile{
+    public static final class EmptyTile extends ChessTile{
 
-        private EmptyT(final int Coord){
+        private EmptyTile(final int Coord){
             super(Coord);
         }
 
@@ -51,13 +51,13 @@ public abstract class ChessTile {
         }
     }
 
-    public static final class OccupiedT extends ChessTile{
+    public static final class OccupiedTile extends ChessTile{
 
        private final Piece PieceOnT;
 
-       private OccupiedT(int TileCord, Piece PieceOnT){
+       private OccupiedTile(int TileCord, Piece PieceOnTile){
             super(TileCord);
-            this.PieceOnT=PieceOnT;
+            this.PieceOnT=PieceOnTile;
         }
 
         public boolean isTileOccupied(){
