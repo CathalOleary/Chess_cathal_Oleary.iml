@@ -15,5 +15,5 @@ public class Piece {
         this.PieceAlliance=PieceAlliance;
     }
 
-   public abstract List<Moves> CalLegaMoves(final Board board)
+   public abstract List<Moves> CalLegaMoves(final Board board);
 }
