@@ -1,3 +1,7 @@
+/**
+ * Created by Cathal OLeary
+ */
+
 public abstract class ChessTile {
 
     int TileCord;
