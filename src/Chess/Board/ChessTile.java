@@ -5,6 +5,7 @@ import java.util.*;
 
 /**
  * Created by Cathal OLeary
+ * I Learned how to use abstract Classes from javatpoint.com/abstract-class-in-java
  */
 
 public abstract class ChessTile {
