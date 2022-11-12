@@ -1,7 +1,6 @@
 package Chess.Board;
 
 import Chess.Piece.Piece;
-
 import java.util.*;
 
 /**
@@ -20,7 +19,7 @@ public abstract class ChessTile {
          ETMap.put(i, new EmptyT(i));
        }
 
-       return null;
+       return ETMap;
    }
 
     ChessTile(int TileCord) {
