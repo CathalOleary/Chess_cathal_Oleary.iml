@@ -11,6 +11,8 @@ public abstract class ChessTile {
 
    private final int TileCord;
 
+   private static final Map<Integer, EmptyT> EMPTY_T_MAP = AllPossibleET();
+
    private static Map<Integer, EmptyT> AllPossibleET(){
        final Map<Integer, EmptyT> ETMap=new HashMap<>();
        int i;
@@ -22,7 +24,11 @@ public abstract class ChessTile {
        return ETMap;
    }
 
-    ChessTile(int TileCord) {
+   public static ChessTile CreateT(final int TileCord, final Piece piece){
+       return piece !=null ? new OccupiedT(TileCord, piece) : EMPTY_T_MAP.get(TileCord);
+   }
+
+    private ChessTile(int TileCord) {
         this.TileCord=TileCord;
     }
 
