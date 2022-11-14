@@ -10,14 +10,14 @@ import java.util.*;
 
 public abstract class ChessTile {
    private final int TileCord;
-
-   private static final Map<Integer, EmptyTile> EMPTY_T_MAP_CACHE = AllPossibleET();
+    public static final int NumTiles=64;
+   private static final Map<Integer, EmptyTile> EmptyTMapCache = AllPossibleET();
 
    private static Map<Integer, EmptyTile> AllPossibleET(){
        final Map<Integer, EmptyTile> ETMap=new HashMap<>();
        int i;
 
-       for(i=0;i<64;i++){
+       for(i=0;i<NumTiles;i++){
          ETMap.put(i, new EmptyTile(i));
        }
 
@@ -25,7 +25,7 @@ public abstract class ChessTile {
    }
 
    public static ChessTile CreateTile(final int TileCord, final Piece piece){
-       return piece !=null ? new OccupiedTile(TileCord, piece) : EMPTY_T_MAP_CACHE.get(TileCord);
+       return piece !=null ? new OccupiedTile(TileCord, piece) : EmptyTMapCache.get(TileCord);
    }
 
     private ChessTile(int TileCord) {

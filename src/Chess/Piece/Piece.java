@@ -2,14 +2,14 @@ package Chess.Piece;
 
 import Chess.Board.*;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Cathal OLeary
  */
 
 public abstract class Piece {
-    private final int PiecePosition;
+    public final int PiecePosition;
     private final Alliance PieceAlliance;
 
     Piece(final int PiecePosition, final Alliance PieceAlliance){
@@ -17,5 +17,9 @@ public abstract class Piece {
         this.PieceAlliance=PieceAlliance;
     }
 
-   public abstract List<Move> CalLegaMoves(final Board board);
+    public Alliance getPieceAlliance(){
+        return this.PieceAlliance;
+    }
+
+   public abstract Collection<Move> CalLegaMoves(final Board board);
 }
