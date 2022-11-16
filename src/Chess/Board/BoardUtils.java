@@ -1,5 +1,9 @@
 package Chess.Board;
 
+/**
+ * Created by Cathal OLeary
+ */
+
 public class BoardUtils {
     public static final boolean[] FirstColum=initColum(0);
     public static final boolean[] SecondColum=initColum(1);

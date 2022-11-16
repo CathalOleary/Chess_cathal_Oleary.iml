@@ -1,7 +1,6 @@
 package Chess.Piece;
 
 import Chess.Board.*;
-
 import java.util.*;
 
 /**

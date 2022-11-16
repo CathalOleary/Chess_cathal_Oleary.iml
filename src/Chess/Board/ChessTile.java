@@ -4,8 +4,11 @@ import Chess.Piece.Piece;
 import java.util.*;
 
 /**
- * Created by Cathal OLeary
  * I Learned how to use abstract Classes from javatpoint.com/abstract-class-in-java and from Alex Lee Youtube
+ */
+
+/**
+ * Created by Cathal OLeary
  */
 
 public abstract class ChessTile {

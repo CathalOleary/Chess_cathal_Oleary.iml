@@ -4,6 +4,10 @@ import Chess.Board.*;
 import Chess.Piece.*;
 import java.util.*;
 
+/**
+ * Created by Cathal OLeary
+ */
+
 public class Pawn extends Piece {
     private final int[] MoveCord={8};
 

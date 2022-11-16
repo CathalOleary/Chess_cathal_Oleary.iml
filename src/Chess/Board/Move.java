@@ -2,6 +2,10 @@ package Chess.Board;
 
 import Chess.Piece.Piece;
 
+/**
+ * Created by Cathal OLeary
+ */
+
 public abstract class Move {
     final Board board;
     final Piece MovedPiece;
